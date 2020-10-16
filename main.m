@@ -10,4 +10,7 @@ TestRecordingAudioPath='/Users/sammyrobens-paradise/projects/cochlear-implant/Vo
 % play audio
 sound(testAudio,testAudioSampleRate*sampling_rate_multiplier);
 % display sampling rate
-disp(testAudioSampleRate);
+% get size
+disp(size(testAudio));
+isMono=is_audio_mono(testAudio);
+disp(isMono);

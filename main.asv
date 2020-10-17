@@ -26,5 +26,5 @@ formatted_audio=get_audio_as_mono(testAudio,testAudioSampleRate);
 rd = 9;
 fl = 21;
 smoothed_signal=sgolayfilt(formatted_audio,rd,fl);
-sound(smoothed_signal,testAudioSampleRate*sampling_rate_multiplier);
+sound(
 

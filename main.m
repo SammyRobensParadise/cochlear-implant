@@ -22,3 +22,7 @@ isMono=is_audio_mono(testAudio);
 formatted_audio=get_audio_as_mono(testAudio,testAudioSampleRate);
 % write audio to new file
 write_audio_to_new_file(testAudio, testAudioSampleRate);
+% plot the sound waveform against sample rate 
+plot(formatted_audio, testAudioSampleRate);
+xlabel('Sample Rate'); 
+ylabel('Audio');

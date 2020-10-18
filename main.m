@@ -28,3 +28,6 @@ fl = 21;
 smoothed_signal=sgolayfilt(formatted_audio,rd,fl);
 sound(smoothed_signal,testAudioSampleRate*sampling_rate_multiplier);
 
+% write audio to new file
+write_audio_to_new_file(testAudio, testAudioSampleRate);
+

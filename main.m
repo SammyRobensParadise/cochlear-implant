@@ -15,7 +15,7 @@ TestRecordingAudioPath='./VoiceRecording1.wav';
 [testAudio,testAudioSampleRate]=get_recording(TestRecordingAudioPath);
 
 % play audio
-sound(testAudio,testAudioSampleRate*sampling_rate_multipso ier);
+sound(testAudio,testAudioSampleRate*sampling_rate_multiplier);
 % call is_audio_mono func demo
 isMono=is_audio_mono(testAudio);
 % call get_audio_as_mono func dem0

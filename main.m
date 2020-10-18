@@ -16,9 +16,18 @@ TestRecordingAudioPath='./VoiceRecording1.wav';
 
 % play audio
 sound(testAudio,testAudioSampleRate*sampling_rate_multiplier);
-% call is_audio_mono func demo
+% determine if signal is mono
 isMono=is_audio_mono(testAudio);
-% call get_audio_as_mono func dem0
+
+% format audio as mono
 formatted_audio=get_audio_as_mono(testAudio,testAudioSampleRate);
+
+% apply Savitzky-Golay filtering and play the sound again
+rd = 9;
+fl = 21;
+smoothed_signal=sgolayfilt(formatted_audio,rd,fl);
+sound(smoothed_signal,testAudioSampleRate*sampling_rate_multiplier);
+
 % write audio to new file
 write_audio_to_new_file(testAudio, testAudioSampleRate);
+

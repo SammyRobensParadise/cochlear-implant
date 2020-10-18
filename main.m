@@ -31,3 +31,7 @@ sound(smoothed_signal,testAudioSampleRate*sampling_rate_multiplier);
 % write audio to new file
 write_audio_to_new_file(testAudio, testAudioSampleRate);
 
+% plot the sound waveform against sample rate 
+plot(formatted_audio, testAudioSampleRate);
+xlabel('Sample Rate'); 
+ylabel('Audio');

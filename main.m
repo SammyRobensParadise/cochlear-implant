@@ -35,3 +35,6 @@ write_audio_to_new_file(testAudio, testAudioSampleRate);
 plot(formatted_audio, testAudioSampleRate);
 xlabel('Sample Rate'); 
 ylabel('Audio');
+
+% downsample audio if sampling rate is not 16kHz
+resampled_audio=downsample_audio(formatted_audio,testAudioSampleRate);

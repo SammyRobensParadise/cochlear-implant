@@ -1,8 +1,0 @@
-function[write_audio] = write_audio_to_new_file(testAudio);
-
-file_with_audio = fopen('exptable.txt', 'w');
-% (file_with_audio, % create new file 
-data = fscan(testAudio); 
-new_file = fopen(newfile.wav, 
-
-

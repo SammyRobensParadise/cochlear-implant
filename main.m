@@ -37,4 +37,7 @@ xlabel('Sample Rate');
 ylabel('Audio');
 
 % downsample audio if sampling rate is not 16kHz
-resampled_audio=downsample_audio(formatted_audio,testAudioSampleRate);
+[resampled_audio,new_sampling_rate]=downsample_audio(formatted_audio,testAudioSampleRate);
+
+% generate a signal using the cosine function
+generate_cos_signal(resampled_audio,new_sampling_rate);

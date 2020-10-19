@@ -13,9 +13,9 @@ TestRecordingAudioPath='./VoiceRecording1.wav';
 
 % get audio
 [testAudio,testAudioSampleRate]=get_recording(TestRecordingAudioPath);
+
 % play audio
 sound(testAudio,testAudioSampleRate*sampling_rate_multiplier);
-
 % determine if signal is mono
 isMono=is_audio_mono(testAudio);
 
@@ -32,9 +32,9 @@ sound(smoothed_signal,testAudioSampleRate*sampling_rate_multiplier);
 write_audio_to_new_file(testAudio, testAudioSampleRate);
 
 % plot the sound waveform against sample rate 
-%plot(formatted_audio, testAudioSampleRate);
-%xlabel('Sample Rate'); 
-%ylabel('Audio');
+plot(formatted_audio, testAudioSampleRate);
+xlabel('Sample Rate'); 
+ylabel('Audio');
 
 % downsample audio if sampling rate is not 16kHz
 resampled_audio=downsample_audio(testAudio,testAudioSampleRate);

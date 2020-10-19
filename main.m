@@ -37,4 +37,4 @@ xlabel('Sample Rate');
 ylabel('Audio');
 
 % downsample audio if sampling rate is not 16kHz
-resampled_audio=downsample_audio(testAudio,testAudioSampleRate);
+resampled_audio=downsample_audio(formatted_audio,testAudioSampleRate);

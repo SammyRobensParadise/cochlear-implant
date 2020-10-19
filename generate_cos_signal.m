@@ -6,6 +6,7 @@ function generate_cos_signal(audio, sampling_rate)
 N = length(audio);
 time_duration = N/sampling_rate;
 % plot the signal
+figure(2)
 oscillation = 1000;
 t = 0:time_duration:N;
 y = cos(2*pi*oscillation*t);

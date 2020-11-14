@@ -10,5 +10,6 @@
 % TODO:
 % Make this into a loop so that it loops through
 % All the test files
-isFiltered=filter_audio_file('./VoiceRecording1.wav');
+intervals=4;
+isFiltered=filer_audio_files('./VoiceRecording1.wav',intervals);
 % END

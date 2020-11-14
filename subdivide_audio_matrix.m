@@ -17,6 +17,11 @@ disp(frequencies);
 freq_interval_length=size(frequencies);
 indexer=((freq_interval_length(2))-1);
 
+disp(indexer);
+% index through the frequencies and filter the audio
+% file on the specified intervals
+for c = 1:indexer
+    
 interval_array=[0];
 end
 

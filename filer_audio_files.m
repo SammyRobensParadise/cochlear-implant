@@ -10,6 +10,10 @@ audioPath=audio_file;
 % format audio as mono
 mono_audio=get_audio_as_mono(audio,audioSampleRate);
 
+% get array of subinterval sounds from mono audio into a specified number
+% of intervals
+[interval_audio_array]=subdivide_audio_matrix(mono_audio,intervals);
+
 % end
 success=true;
 end

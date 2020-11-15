@@ -10,6 +10,6 @@
 % TODO:
 % Make this into a loop so that it loops through
 % All the test files
-intervals=5;
+intervals=2;
 isFiltered=filer_audio_files('./VoiceRecording1.wav',intervals);
 % END

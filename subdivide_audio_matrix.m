@@ -24,7 +24,7 @@ disp(freq_interval_cells);
 % where c is the lower bound on the inverval and c+1 is
 % the upper bound on the interval
 for c = 1:indexer
-    freq_interval_cells{c}=filter_bandpass(audio_matrix,frequencies(c),frequencies(c+1));
+    freq_interval_cells{c}=filter_bandpass(audio_matrix,frequencies(c),frequencies(c+1),audio_sample_rate);
 interval_cells=freq_interval_cells;
 end
 

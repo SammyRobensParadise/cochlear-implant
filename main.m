@@ -10,6 +10,7 @@
 % TODO:
 % Make this into a loop so that it loops through
 % All the test files
-intervals=2;
+% determine the number of intervals that the sound should be split up into
+intervals=10;
 isFiltered=filer_audio_files('./VoiceRecording1.wav',intervals);
 % END

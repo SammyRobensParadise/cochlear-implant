@@ -1,4 +1,4 @@
-function [interval_cells] = subdivide_audio_matrix(audio_matrix,intervals,audio_sample_rate)
+function [interv_cells] = subdivide_audio_matrix(audio_matrix,intervals,audio_sample_rate)
 %SUBDIVIDE_AUDIO_MATRIX Subdivides an audio matrix into intervals of
 % smaller audio matrices using a bandpass filter and returns an array of the
 % filtered signals
@@ -23,6 +23,6 @@ freq_interval_cells = cell(interval_number,1);
 % the upper bound on the interval
 for c = 1:indexer
     freq_interval_cells{c}=filter_bandpass(audio_matrix,frequencies(c),frequencies(c+1),audio_sample_rate);
-interval_cells=freq_interval_cells;
+interv_cells=freq_interval_cells;
 end
 

@@ -13,6 +13,7 @@ abs_freq_delta=(MAX_FREQUENCY-MIN_FREQUENCY);
 freq_interval_range=(abs_freq_delta/interval_number);
 frequencies=MIN_FREQUENCY:freq_interval_range:MAX_FREQUENCY;
 freq_interval_length=size(frequencies);
+% get number of frequency intervals to index through
 indexer=((freq_interval_length(2))-1);
 
 % create array for filtered sounds
@@ -25,4 +26,3 @@ for c = 1:indexer
     freq_interval_cells{c}=filter_bandpass(audio_matrix,frequencies(c),frequencies(c+1),audio_sample_rate);
 interv_cells=freq_interval_cells;
 end
-

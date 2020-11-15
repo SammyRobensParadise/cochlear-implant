@@ -10,4 +10,3 @@ filtered_interval=filter(BANDPASS,audio_matrix);
 % return the filtered data
 interval_audio_matrix=filtered_interval;
 end
-

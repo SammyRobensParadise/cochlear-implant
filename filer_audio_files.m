@@ -11,9 +11,8 @@ audioPath=audio_file;
 mono_audio=get_audio_as_mono(audio,audioSampleRate);
 % get array of subinterval sounds from mono audio into a specified number
 % of intervals
+% GET CELL ARRAY OF FILTERED AUDIO MATRICES HERE
 [interval_audio_array]=subdivide_audio_matrix(mono_audio,intervals,audioSampleRate);
-
 % end
 success=true;
 end
-

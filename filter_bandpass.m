@@ -1,9 +1,12 @@
 function [interval_audio_matrix] = filter_bandpass(audio_matrix,min_freq_range,max_freq_range,sample_rate)
 %FILTER_BANDPASS returns an audio matrix of the specified sub_interval
 % create bandpass filter
+% specify order of filter
 order=10;
+% create filter
 BANDPASS=bandpass_filter_v1(order,min_freq_range,max_freq_range,sample_rate);
-sound(audio_matrix,sample_rate);
-interval_audio_matrix =audio_matrix
+% filter signal on interval
+filtered_interval=filter(BANDPASS,audio_matrix);
+% return the filtered data
+interval_audio_matrix=filtered_interval;
 end
-

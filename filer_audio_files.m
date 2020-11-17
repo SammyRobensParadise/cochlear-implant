@@ -1,4 +1,4 @@
-function [success] = filer_audio_files(audio_file,intervals)
+function [success, interval_audio_array] = filer_audio_files(audio_file,intervals)
 %PROCESS_AUDIO_FILE steps encompassed in Phase 1
 % get loaders
 

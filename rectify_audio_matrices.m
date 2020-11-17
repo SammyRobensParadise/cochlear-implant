@@ -1,4 +1,4 @@
-function [success,rectified_array] = rectify_audio_files(audio_array)
+function [success,rectified_array] = rectify_audio_matrices(audio_array)
 %RECTIFY_AUDIO_FILES Rectifies an array of audio signals and returns a new
 %array of the rectified signals
 

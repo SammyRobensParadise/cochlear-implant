@@ -19,6 +19,6 @@ file_number=2;
 plotSuccess=plot_audio_matrix(filtered_array,file_number);
 
 % evelope extraction step 1: rectify each filtered signal
-[isRectified, rectified_array]=rectify_audio_files(filtered_array);
+[isRectified, rectified_array]=rectify_audio_matrices(filtered_array);
 
 % END

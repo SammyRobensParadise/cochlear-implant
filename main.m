@@ -18,7 +18,14 @@ intervals=10;
 file_number=2;
 plotSuccess=plot_audio_matrix(filtered_array,file_number);
 
-% evelope extraction step 1: rectify each filtered signal
+% envelope extraction step 1: rectify each filtered signal
 [isRectified, rectified_array]=rectify_audio_matrices(filtered_array);
+
+% envelope extraction step 2: 
+[isExtracted, envelope_array]=detect_envelope(rectified_array);
+
+% plot extracted envelope of highest and lowest channels 
+file_number=4; 
+plot_envelope_array(envelope_array, file_number);
 
 % END

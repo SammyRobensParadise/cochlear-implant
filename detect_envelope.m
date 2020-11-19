@@ -10,16 +10,17 @@ cutoff_frequency = 400;  % Cutoff Frequency
 sampling_rate = 1600; % Sampling Rate
 
 LOWPASS=lowpass_filter(sampling_rate, order, cutoff_frequency);
-envelope_array=filter(LOWPASS,rectified_array);
+%envelope_array=filter(LOWPASS,rectified_array);
 
 % create array for filtered sounds
-% r_array_length=length(rectified_array);
-% envelope_cells=cell(r_array_length,1);
+array_length=length(rectified_array);
+envelope_cells=cell(array_length,1);
 
-% index through the rectified array and add to envelope array
-% for c = 1:r_array_length
-%      envelope_cells{c}=lowpass_filter(rectified_array{c}, order, cutoff_frequency);
-% envelope_array = envelope_cells;
+%index through the rectified array and add to envelope array
+for c = 1:array_length
+    envelope_cells{c}=filter(LOWPASS,rectified_array{c});
+
+envelope_array = envelope_cells;
 
 success=true;
 end

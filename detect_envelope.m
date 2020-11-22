@@ -5,12 +5,11 @@ function [success, envelope_array] = detect_envelope(rectified_array)
 %r_array = cell2mat(rectified_array);
 
 % filter specifications
-numer_order  = 10;   % Numerator order
-denom_order = 1; % Denominator order
+order  = 10;   % Numerator order
 cutoff_frequency = 400;  % Cutoff Frequency
 sampling_rate = 1600; % Sampling Rate
 
-LOWPASS=lowpass_v2(sampling_rate, numer_order, denom_order, cutoff_frequency);
+LOWPASS=lowpass_FIR(order, cutoff_frequency, sampling_rate);
 
 % create array for filtered sounds
 array_length=length(rectified_array);

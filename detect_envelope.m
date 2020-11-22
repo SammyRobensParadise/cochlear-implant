@@ -5,7 +5,7 @@ function [success, envelope_array] = detect_envelope(rectified_array)
 %r_array = cell2mat(rectified_array);
 
 % filter specifications
-order  = 10;   % Numerator order
+order  = 100;   % Order
 cutoff_frequency = 400;  % Cutoff Frequency
 sampling_rate = 1600; % Sampling Rate
 

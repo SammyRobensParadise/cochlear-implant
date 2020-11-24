@@ -1,5 +1,5 @@
 function [interval_audio_matrix] = filter_bandpass(audio_matrix,min_freq_range,max_freq_range,sample_rate)
-%FILTER_BANDPASS returns an audio matrix of the specified sub_interval
+% FILTER_BANDPASS returns an audio matrix of the specified sub_interval
 % create bandpass filter
 % specify order of filter
 order=100;

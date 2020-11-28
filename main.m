@@ -1,28 +1,35 @@
 % *************************************************
 % Sammy Robens-Paradise,Cindy McGinnis, Mary McPhee
 % Cochlear Implant, SYDE 252
-% *************************************************
-
-% PHASE 1
-% res=process_audio_file('./VoiceRecording1.wav','new_audio_file.wav');
-
-% PHASE 2
-% TODO:
-% Make this into a loop so that it loops through
-% All the test files
+% ************************************************
 
 % determine the number of intervals that the sound should be split up into
 intervals=10;
 [isFiltered, filtered_array,center_frequencies]=filer_audio_files('./VoiceRecording1.wav',intervals);
-% plot each filtered audio against sampling rate
+% throw an error if audio files are not filtered
+if(not(isFiltered))
+    error("Error: \n Unable to filter audio files %s.",isFiltered)
+end
+
+% plot filtered audio against sampling rate
 file_number=2;
 plotSuccess=plot_audio_matrix(filtered_array,file_number);
 
 % envelope extraction step 1: rectify each filtered signal
 [isRectified, rectified_array]=rectify_audio_matrices(filtered_array);
+% throw an error if audio unable to rectify signals
+if(not(isRectified))
+    error("Error: \n Unable to rectify signals %s.",isRectified)
+end
 
-% envelope extraction step 2: 
+% envelope extraction step 2: detect envelope 
 [isExtracted, envelope_array]=detect_envelope(rectified_array);
+% throw an error if audio unable to extract signals
+if(not(isExtracted))
+    error("Error: \n Unable to extract signals by detecting envelope %s.",isExtracted)
+end
+
+
 
 % plot extracted envelope of highest and lowest channels 
 file_number=4; 

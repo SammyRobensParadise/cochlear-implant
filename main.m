@@ -10,6 +10,7 @@
 % TODO:
 % Make this into a loop so that it loops through
 % All the test files
+
 % determine the number of intervals that the sound should be split up into
 intervals=10;
 [isFiltered, filtered_array]=filer_audio_files('./VoiceRecording1.wav',intervals);
@@ -23,6 +24,7 @@ plotSuccess=plot_audio_matrix(filtered_array,file_number);
 
 % envelope extraction step 2: 
 [isExtracted, envelope_array]=detect_envelope(rectified_array);
+
 % plot extracted envelope of highest and lowest channels 
 file_number=4; 
 plot_audio_matrix(envelope_array, file_number);

@@ -29,10 +29,9 @@ if(not(isExtracted))
     error("Error: \n Unable to extract signals by detecting envelope %s.",isExtracted)
 end
 
-
-
 % plot extracted envelope of highest and lowest channels 
 file_number=4; 
 plot_audio_matrix(envelope_array, file_number);
+
 
 % END

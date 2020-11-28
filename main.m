@@ -13,8 +13,7 @@
 
 % determine the number of intervals that the sound should be split up into
 intervals=10;
-[isFiltered, filtered_array]=filer_audio_files('./VoiceRecording1.wav',intervals);
-
+[isFiltered, filtered_array,center_frequencies]=filer_audio_files('./VoiceRecording1.wav',intervals);
 % plot each filtered audio against sampling rate
 file_number=2;
 plotSuccess=plot_audio_matrix(filtered_array,file_number);

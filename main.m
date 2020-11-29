@@ -5,7 +5,7 @@
 
 % determine the number of intervals that the sound should be split up into
 intervals=10;
-[isFiltered, filtered_array,center_frequencies]=filer_audio_files('./VoiceRecording1.wav',intervals);
+[isFiltered, filtered_array,center_frequencies,sampling_rate]=filer_audio_files('./VoiceRecording1.wav',intervals);
 % throw an error if audio files are not filtered
 if(not(isFiltered))
     error("Error: \n Unable to filter audio files %s.",isFiltered)
@@ -29,7 +29,7 @@ if(not(isExtracted))
     error("Error: \n Unable to extract signals by detecting envelope %s.",isExtracted)
 end
 
-[isGenerated,cosine_signals]=generate_cos_signals_for_each_interval(intervals,center_frequencies);
+[isGenerated,cosine_signals]=generate_cos_signals_for_each_interval(intervals,center_frequencies,envelope_array,sampling_rate);
 % throw an error if audio unable to get cosine signals
 if(not(isGenerated))
         error("Error: \n Unable to generate cosine signals %s.",isGenerated)

@@ -1,4 +1,4 @@
-function [success, interval_audio_array,center_frequencies] = filer_audio_files(audio_file,intervals)
+function [success, interval_audio_array,center_frequencies,sampling_rate] = filer_audio_files(audio_file,intervals)
 %PROCESS_AUDIO_FILE steps encompassed in Phase 1
 
 % get audio filepath
@@ -13,5 +13,6 @@ mono_audio=get_audio_as_mono(audio,audioSampleRate);
 % GET CELL ARRAY OF FILTERED AUDIO MATRICES HERE
 [interval_audio_array,center_frequencies]=subdivide_audio_matrix(mono_audio,intervals,audioSampleRate);
 % end
+sampling_rate=audioSampleRate;
 success=true;
 end

@@ -8,6 +8,5 @@ N = length(freq_array); % sample lenth
 t=linspace(0, N/fs, N);
 F = frequency;                     
 generated_signal = sin(2*pi*F*t);
-plot(1,generated_signal)
 end
 

@@ -7,6 +7,6 @@ fs = sampling_rate;      % Sampling frequency (samples per second)
 N = length(freq_array); % sample lenth         
 t=linspace(0, N/fs, N);
 F = frequency;                     
-generated_signal = sin(2*pi*F*t);
+generated_signal = cos(2*pi*F*t);
 end
 

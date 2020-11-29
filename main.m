@@ -29,7 +29,11 @@ if(not(isExtracted))
     error("Error: \n Unable to extract signals by detecting envelope %s.",isExtracted)
 end
 
-[isGenerated,cosine_signals]=generate_cos_signals_for_each_interval(intervals,center_frequencies,envelope_array);
+[isGenerated,cosine_signals]=generate_cos_signals_for_each_interval(intervals,center_frequencies);
+% throw an error if audio unable to get cosine signals
+if(not(isGenerated))
+        error("Error: \n Unable to generate cosine signals %s.",isGenerated)
+end
 
 % plot extracted envelope of highest and lowest channels 
 file_number=4; 

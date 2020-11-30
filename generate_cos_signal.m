@@ -1,20 +1,12 @@
-function [generated_signal,sampling_rate_gen]= generate_cos_signal(audio, sampling_rate,figure_num)
+function [generated_signal]= generate_cos_signal(frequency,freq_array,sampling_rate)
 % GENERATE_COS_SIGNAL generates a signal using the cosine function
 % with the same time duration and frequency of the input signal
 % calculate the time duration of the input signal
-N = length(audio);
-time_duration= N/sampling_rate;
 
-% plot the signal
-figure(figure_num)
-oscillation = 1000;
-cycles=2;
-t = 0:(1/sampling_rate):cycles/oscillation;
-y = cos(2*pi*oscillation*t);
-plot(t, y);
-xlabel('t'); 
-ylabel('y(t)');
-generated_signal=y;
-sampling_rate_gen=sampling_rate;
-
+fs = sampling_rate;      % Sampling frequency (samples per second)                 
+N = length(freq_array); % sample lenth         
+t=linspace(0, N/fs, N);
+F = frequency;                     
+generated_signal = cos(2*pi*F*t);
 end
+

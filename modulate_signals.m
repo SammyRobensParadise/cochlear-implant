@@ -5,10 +5,10 @@ function [isModulated,modulated_signal_cells] = modulate_signals(information_sig
 indexer=size(information_signal);
 indexer=indexer(1);
 signal_cells=cell(indexer,1);
+
 for c=1:indexer
-    signal_cells{c}=carrier_signal{c}*information_signal; 
+    signal_cells{c}=carrier_signal{c}.*information_signal{c}; 
 modulated_signal_cells = signal_cells;
-isModulated = information_signal;
-plot(modulated_signal_cells{1})
+isModulated = true;
 end
 

@@ -35,7 +35,15 @@ end
 if(not(isGenerated))
         error("Error: \n Unable to generate cosine signals %s.",isGenerated)
 end
+figure(6)
 
+% modulate signals with cosine signals
+[isModulated,modulated_signal_cells]=modulate_signals(envelope_array,cosine_signals);
+% throw an error if the signal is unable to modulate signals
+if(not(isModulated))
+        error("Error: \n Unable to modulate signals %s.",isModulated)
+end
+disp(modulated_signal_cells{4})
 % plot extracted envelope of highest and lowest channels 
 % file_number=4; 
 % plot_audio_matrix(envelope_array, file_number);

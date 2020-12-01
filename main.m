@@ -42,8 +42,6 @@ figure(10)
 if(not(isModulated))
         error("Error: \n Unable to modulate signals %s.",isModulated)
 end
-figure(10)
-disp(modulated_signal_cells{3})
 % plot extracted envelope of highest and lowest channels 
 % file_number=4; 
 % plot_audio_matrix(envelope_array, file_number);

@@ -5,7 +5,7 @@
 
 % determine the number of intervals that the sound should be split up into
 intervals=10;
-[isFiltered, filtered_array,center_frequencies,sampling_rate]=filer_audio_files('./test.wav',intervals);
+[isFiltered, filtered_array,center_frequencies,sampling_rate]=filer_audio_files('./VoiceRecording1.wav',intervals);
 % throw an error if audio files are not filtered
 if(not(isFiltered))
     error("Error: \n Unable to filter audio files %s.",isFiltered)
@@ -41,10 +41,12 @@ end
 if(not(isModulated))
         error("Error: \n Unable to modulate signals %s.",isModulated)
 end
-figure(20)
-plot(modulated_signal_cells{1})
-% plot extracted envelope of highest and lowest channels 
-% file_number=4; 
-% plot_audio_matrix(envelope_array, file_number);
+% combine modulated signals
+[isUniformSignalGenerated,uniform_signal]=generate_uniform_signal(modulated_signal_cells);
+if(not(isUniformSignalGenerated))
+        error("Error: \n Unable to combine signals %s.",isUniformSignalGenerated)
+end
 
-% END
+
+sound(uniform_signal,sampling_rate)
+

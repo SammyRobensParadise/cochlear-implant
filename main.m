@@ -46,6 +46,7 @@ end
 if(not(isUniformSignalGenerated))
         error("Error: \n Unable to combine signals %s.",isUniformSignalGenerated)
 end
+
 sound(uniform_signal,sampling_rate)
 write_audio_to_new_file(uniform_signal,sampling_rate,'generated_audio_file.wav')
 

@@ -7,15 +7,15 @@
 % NOTE: If you are running this on a UNIX based system them
 % you will need to change \ to a / because of the diff in the 
 % way files are handled.
-inputSounds = dir('.\input-sounds\*.wav');
+inputSounds = dir('./input-sounds/*.wav');
 inputSounds = {inputSounds.name}';
 
 % loop through each .wav file in the "Input Sounds" folder
 % the generated sounds will be placed in the "Output Sounds" folder
 for i=1:numel(inputSounds)
     % create input and output file names for each .wav file in the folder
-    inputName = fullfile('.\input-sounds', inputSounds{i});
-    outputName = fullfile('.\output-sounds',inputSounds{i});
+    inputName = fullfile('./input-sounds', inputSounds{i});
+    outputName = fullfile('./output-sounds',inputSounds{i});
 
     % determine the number of intervals that the sound should be split up into
     intervals=10;
@@ -41,7 +41,7 @@ for i=1:numel(inputSounds)
     end
 
     % envelope extraction step 2: detect envelope 
-    [isExtracted, envelope_array]=detect_envelope(rectified_array);
+    [isExtracted, envelope_array]=detect_envelope(rectified_array,sampling_rate);
     % throw an error if audio unable to extract signals
     if(not(isExtracted))
         error("Error: \n Unable to extract signals by detecting envelope %s.",isExtracted)

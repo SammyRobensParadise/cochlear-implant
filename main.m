@@ -4,6 +4,9 @@
 % ************************************************
 
 % get names of all .wav files in the "Input Sounds" folder
+% NOTE: If you are running this on a UNIX based system them
+% you will need to change \ to a / because of the diff in the 
+% way files are handled.
 inputSounds = dir('.\input-sounds\*.wav');
 inputSounds = {inputSounds.name}';
 

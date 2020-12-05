@@ -12,9 +12,9 @@ Fs = sampling_frequency;  % Sampling Frequency
 
 N             = order;      % Order
 Fc1           = c1_freq;      % First Cutoff Frequency
-Fc2           = c2_freq;     % Second Cutoff Frequency
+Fc2           = c2_freq;    % Second Cutoff Frequency
 flag          = 'scale';  % Sampling Flag
-SidelobeAtten = 100;      % Window Parameter
+SidelobeAtten = 1000;      % Window Parameter
 % Create the window vector for the design algorithm.
 win = chebwin(N+1, SidelobeAtten);
 

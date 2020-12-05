@@ -15,7 +15,7 @@ inputSounds = {inputSounds.name}';
 for i=1:numel(inputSounds)
     % create input and output file names for each .wav file in the folder
     inputName = fullfile('./input-sounds', inputSounds{i});
-    outputName = fullfile('./output-sounds',inputSounds{i});
+    outputName = fullfile('./output-sounds',append('output-',inputSounds{i}));
 
     % determine the number of intervals that the sound should be split up into
     intervals=10;
@@ -72,7 +72,5 @@ for i=1:numel(inputSounds)
     if(not(isUniformSignalGenerated))
             error("Error: \n Unable to combine signals %s.",isUniformSignalGenerated)
     end
-
-    sound(uniform_signal,sampling_rate)
     write_audio_to_new_file(uniform_signal,sampling_rate,outputName)
 end

@@ -6,7 +6,7 @@ function [success, envelope_array] = detect_envelope(rectified_array,sampling_ra
 
 % filter specifications
 order  = 139;   % Order
-cutoff_frequency = 1600;  % Cutoff Frequency
+cutoff_frequency = abs((sampling_rate/2)-1000);  % Cutoff Frequency
 % Sampling Rate
 
 % LOWPASS=lowpass_FIR(order, cutoff_frequency, sampling_rate);

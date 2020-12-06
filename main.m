@@ -24,7 +24,7 @@ for i=1:numel(inputSounds)
     if(not(isFiltered))
         error("Error: \n Unable to filter audio files %s.",isFiltered)
     end
-
+    disp(sampling_rate);
     % plot filtered audio against sampling rate
     file_number=i*4-3;
     isFilteredAudioPlotted=plot_audio_matrix(filtered_array,file_number);
